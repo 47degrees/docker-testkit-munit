@@ -1,0 +1,31 @@
+sudo: true
+services:
+  - docker
+
+before_install:
+  - docker pull mongo:3.0.6
+  - docker pull elasticsearch:1.7.1
+  - docker pull spotify/kafka
+  - docker pull nginx:1.17.10
+  - docker pull confluentinc/cp-zookeeper:5.5.0
+  - docker pull confluentinc/cp-kafka:5.5.0
+  - docker pull confluentinc/cp-schema-registry:5.5.0
+  - docker pull neo4j:3.0.3
+
+language: scala
+
+scala:
+  - 2.13.1
+
+jdk:
+  - oraclejdk8
+
+cache:
+  directories:
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt/boot/
+
+before_cache:
+  # Tricks to avoid unnecessary cache updates
+  - find $HOME/.ivy2 -name "ivydata-*.properties" -delete
+  - find $HOME/.sbt -name "*.lock" -delete
