@@ -9,8 +9,8 @@ abstract class DockerContainerLinkingSpec extends FunSuite with DockerTestKit {
 
   lazy val cmdExecutor = implicitly[DockerCommandExecutor]
 
-  val pingName = "ping"
-  val pongName = "pong"
+  val pingName  = "ping"
+  val pongName  = "pong"
   val pingAlias = "pang"
 
   val pingService = DockerContainer("nginx:1.17.10", name = Some(pingName))
@@ -21,11 +21,11 @@ abstract class DockerContainerLinkingSpec extends FunSuite with DockerTestKit {
   override def dockerContainers = pingService :: pongService :: super.dockerContainers
 
   test("A DockerContainer should be linked to the specified containers upon start") {
-    val ping = cmdExecutor.inspectContainer(pingName)
+    val ping     = cmdExecutor.inspectContainer(pingName)
     val pongPing = cmdExecutor.inspectContainer(s"$pongName/$pingAlias")
 
     for {
-      pingState <- ping
+      pingState     <- ping
       pongPingState <- pongPing
     } yield {
       assert(pingState.nonEmpty)

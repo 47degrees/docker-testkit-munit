@@ -43,7 +43,9 @@ class DependencyGraphReadyCheckSpec extends FunSuite with DockerKitSpotify {
         ContainerLink(zookeeperContainer, "zookeeper"),
         ContainerLink(kafkaContainer, "kafka")
       )
-      .withReadyChecker(DockerReadyChecker.LogLineContains("Server started, listening for requests"))
+      .withReadyChecker(
+        DockerReadyChecker.LogLineContains("Server started, listening for requests")
+      )
 
   override def dockerContainers =
     schemaRegistryContainer :: kafkaContainer :: zookeeperContainer :: super.dockerContainers
