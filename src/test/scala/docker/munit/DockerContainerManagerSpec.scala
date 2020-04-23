@@ -1,5 +1,6 @@
-package com.whisk.docker
+package docker.munit
 
+import com.whisk.docker._
 import com.whisk.docker.DockerContainerManager._
 import com.whisk.docker.impl.dockerjava._
 import _root_.munit.FunSuite
