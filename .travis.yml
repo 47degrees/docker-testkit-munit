@@ -14,6 +14,7 @@ before_install:
   - docker pull neo4j:3.0.3
   - docker pull docker.elastic.co/elasticsearch/elasticsearch-oss:6.2.4
   - docker pull whisk/cassandra:2.1.8
+  - docker pull postgres:9.5.3
 
 language: scala
 
