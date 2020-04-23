@@ -17,7 +17,7 @@ lazy val munit = project
       "com.whisk"      %% "docker-testkit-impl-spotify"     % "0.9.9" % Test,
       "com.whisk"      %% "docker-testkit-impl-docker-java" % "0.9.9" % Test,
       "com.whisk"      %% "docker-testkit-samples"          % "0.9.9" % Test,
-      "ch.qos.logback" % "logback-classic"                  % "1.2.1" % Test,
+      "ch.qos.logback" % "logback-classic"                  % "1.2.3" % Test,
       "org.postgresql" % "postgresql"                       % "9.4.1210" % Test
     )
   )
