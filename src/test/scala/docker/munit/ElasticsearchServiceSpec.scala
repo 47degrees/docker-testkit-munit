@@ -1,4 +1,4 @@
-package com.github.benfradet.docker.munit
+package docker.munit
 
 import com.whisk.docker._
 import com.whisk.docker.impl.dockerjava.DockerKitDockerJava

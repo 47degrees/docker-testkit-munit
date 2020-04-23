@@ -1,11 +1,12 @@
 ## docker-testkit-munit
 
-This is an integration for [docker-testkit](https://github.com/whisklabs/docker-it-scala/)
-and [munit](https://scalameta.org/munit/).
+This is the [munit](https://scalameta.org/munit) integration for
+[docker-testkit](https://github.com/whisklabs/docker-it-scala/).
 
 ### Usage
 
-To add this to your SBT project:
+To leverage this in your SBT project, using SBT
+[integration test settings](https://www.scala-sbt.org/1.x/docs/Testing.html#Integration+Tests):
 
 ```scala
 lazy val root = (project in file("."))
@@ -14,25 +15,23 @@ lazy val root = (project in file("."))
     Defaults.itSettings,
     testFrameworks += new TestFramework("munit.Framework"),
     libraryDependencies += Seq(
-      "com.scalameta"        %% "munit"                       % "0.7.3" % "it,test"
-      "com.whisk"            %% "docker-testkit-impl-spotify" % "0.9.9" % "it",
-      "com.github.benfradet" %% "docker-testkit-munit"        % "0.1.0" % "it"
+      "com.scalameta" %% "munit"                       % "0.7.3" % "it,test"
+      "com.whisk"     %% "docker-testkit-impl-spotify" % "0.9.9" % "it",
+      "com.47deg"     %% "docker-testkit-munit"        % "0.1.0" % "it"
     )
   )
 ```
 
-Using SBT `it` settings: https://www.scala-sbt.org/1.x/docs/Testing.html#Integration+Tests.
-
 In your integration test:
 
 ```scala
-import com.github.benfradet.docker.munit.DockerTestKit
+import docker.munit.DockerTestKit
 import com.whisk.docker._
 import com.whisk.docker.impl.spotify.DockerKitSpotify
 import munit.FunSuite
 
 trait Nginx extends DockerTestKit with DockerKitSpotify { self: FunSuite =>
-  override def dockerContainers = DockerContainer("nginx:1.7.10") :: dockerContainers
+  override def dockerContainers = DockerContainer("nginx:1.17.10") :: dockerContainers
 }
 
 class IntegrationText extends FunSuite with Nginx {

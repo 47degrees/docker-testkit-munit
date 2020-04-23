@@ -1,4 +1,4 @@
-package com.github.benfradet.docker.munit
+package docker.munit
 
 import com.whisk.docker._
 import _root_.munit.FunSuite
