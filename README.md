@@ -1,5 +1,7 @@
 ## docker-testkit-munit
 
+[![Build Status](https://travis-ci.org/BenFradet/docker-testkit-munit.svg?branch=master)](https://travis-ci.org/BenFradet/docker-testkit-munit)
+
 This is an integration for [docker-testkit](https://github.com/whisklabs/docker-it-scala/)
 and [munit](https://scalameta.org/munit/).
 
