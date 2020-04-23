@@ -8,7 +8,8 @@ import _root_.munit.FunSuite
 class Neo4jServiceSpec extends FunSuite with DockerTestKit with DockerNeo4jService {
 
   override implicit val dockerFactory: DockerFactory = new SpotifyDockerFactory(
-    DefaultDockerClient.fromEnv().build())
+    DefaultDockerClient.fromEnv().build()
+  )
 
   test("neo4j container should be ready") {
     isContainerReady(neo4jContainer).map(assert(_))
