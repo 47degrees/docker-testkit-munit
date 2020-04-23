@@ -1,23 +1,16 @@
-lazy val commonSettings = Seq(
-  organization := "com.github.benfradet",
-  version := "0.1.0",
-  scalaVersion := "2.13.1",
-  fork in Test := true
-)
+addCommandAlias("ci-test", "scalafmtCheckAll; scalafmtSbtCheck; test")
+addCommandAlias("ci-docs", "github; project-docs/mdoc; headerCreateAll")
 
-lazy val munit = project
+lazy val testkit = project
   .in(file("."))
-  .settings(commonSettings: _*)
-  .settings(
-    name := "docker-testkit-munit",
-    testFrameworks += new TestFramework("munit.Framework"),
-    libraryDependencies ++= Seq(
-      "org.scalameta"  %% "munit"                           % "0.7.3",
-      "com.whisk"      %% "docker-testkit-core"             % "0.9.9",
-      "com.whisk"      %% "docker-testkit-impl-spotify"     % "0.9.9" % Test,
-      "com.whisk"      %% "docker-testkit-impl-docker-java" % "0.9.9" % Test,
-      "com.whisk"      %% "docker-testkit-samples"          % "0.9.9" % Test,
-      "ch.qos.logback" % "logback-classic"                  % "1.2.1" % Test,
-      "org.postgresql" % "postgresql"                       % "9.4.1210" % Test
-    )
-  )
+  .settings(moduleName := "docker-testkit-munit")
+  .settings(testkitSettings: _*)
+
+lazy val `project-docs` = project
+  .in(file(".docs"))
+  .aggregate(testkit)
+  .settings(moduleName := "docker-testkit-munit-project-docs")
+  .settings(mdocIn := file(".docs"))
+  .settings(mdocOut := file("."))
+  .settings(skip in publish := true)
+  .enablePlugins(MdocPlugin)
