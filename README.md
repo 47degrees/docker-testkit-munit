@@ -1,6 +1,6 @@
 ## docker-testkit-munit
 
-This is the [munit](https://scalameta.org/munit) integration for
+This is the [MUnit](https://scalameta.org/munit) integration for
 [docker-testkit](https://github.com/whisklabs/docker-it-scala/).
 
 ### Usage
