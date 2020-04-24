@@ -28,7 +28,7 @@ object ProjectPlugin extends AutoPlugin {
       organization := "com.47deg",
       organizationName := "47 Degrees",
       organizationHomepage := Some(url("https://47deg.com")),
-      scalaVersion := "2.13.1",
+      scalaVersion := "2.13.2",
       testFrameworks += new TestFramework("munit.Framework"),
       fork in Test := true
     )
