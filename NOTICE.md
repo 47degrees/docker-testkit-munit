@@ -6,4 +6,4 @@ docker-testkit-munit
 
 Copyright (c) 2020 47 Degrees. All rights reserved.
 
-Licensed under Apache 2.0. See [LICENSE](LICENSE.md) for terms.
+Licensed under Apache-2.0. See [LICENSE](LICENSE.md) for terms.
