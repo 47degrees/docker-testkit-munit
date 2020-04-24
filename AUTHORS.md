@@ -8,6 +8,7 @@
 
 The maintainers of the project are:
 
+- [![47erbot](https://avatars1.githubusercontent.com/u/24799081?v=4&s=20) **47erbot**](https://github.com/47erbot)
 - [![BenFradet](https://avatars2.githubusercontent.com/u/1737211?v=4&s=20) **Ben Fradet (BenFradet)**](https://github.com/BenFradet)
 
 ## Contributors
@@ -15,3 +16,4 @@ The maintainers of the project are:
 These are the people that have contributed to the _docker-testkit-munit_ project:
 
 - [![BenFradet](https://avatars2.githubusercontent.com/u/1737211?v=4&s=20) **BenFradet**](https://github.com/BenFradet)
+- [![47erbot](https://avatars1.githubusercontent.com/u/24799081?v=4&s=20) **47erbot**](https://github.com/47erbot)
