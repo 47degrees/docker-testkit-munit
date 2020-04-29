@@ -12,7 +12,7 @@ object ProjectPlugin extends AutoPlugin {
 
     lazy val testkitSettings = Seq(
       libraryDependencies ++= Seq(
-        "org.scalameta"  %% "munit"                           % "0.7.3",
+        "org.scalameta"  %% "munit"                           % "0.7.4",
         "com.whisk"      %% "docker-testkit-core"             % "0.9.9",
         "com.whisk"      %% "docker-testkit-impl-spotify"     % "0.9.9" % Test,
         "com.whisk"      %% "docker-testkit-impl-docker-java" % "0.9.9" % Test,
