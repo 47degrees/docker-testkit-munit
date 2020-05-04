@@ -12,13 +12,13 @@ object ProjectPlugin extends AutoPlugin {
 
     lazy val testkitSettings = Seq(
       libraryDependencies ++= Seq(
-        "org.scalameta"  %% "munit"                           % "0.7.4",
-        "com.whisk"      %% "docker-testkit-core"             % "0.9.9",
-        "com.whisk"      %% "docker-testkit-impl-spotify"     % "0.9.9" % Test,
-        "com.whisk"      %% "docker-testkit-impl-docker-java" % "0.9.9" % Test,
-        "com.whisk"      %% "docker-testkit-samples"          % "0.9.9" % Test,
-        "ch.qos.logback" % "logback-classic"                  % "1.2.3" % Test,
-        "org.postgresql" % "postgresql"                       % "9.4.1212" % Test
+        "org.scalameta" %% "munit"                           % "0.7.4",
+        "com.whisk"     %% "docker-testkit-core"             % "0.9.9",
+        "com.whisk"     %% "docker-testkit-impl-spotify"     % "0.9.9"    % Test,
+        "com.whisk"     %% "docker-testkit-impl-docker-java" % "0.9.9"    % Test,
+        "com.whisk"     %% "docker-testkit-samples"          % "0.9.9"    % Test,
+        "ch.qos.logback" % "logback-classic"                 % "1.2.3"    % Test,
+        "org.postgresql" % "postgresql"                      % "9.4.1212" % Test
       )
     )
   }
