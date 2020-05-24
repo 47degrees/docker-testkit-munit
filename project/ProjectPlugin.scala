@@ -26,8 +26,6 @@ object ProjectPlugin extends AutoPlugin {
   override def projectSettings: Seq[Def.Setting[_]] =
     Seq(
       organization := "com.47deg",
-      organizationName := "47 Degrees",
-      organizationHomepage := Some(url("https://47deg.com")),
       scalaVersion := "2.13.2",
       testFrameworks += new TestFramework("munit.Framework"),
       fork in Test := true
