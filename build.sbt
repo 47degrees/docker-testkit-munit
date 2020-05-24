@@ -10,9 +10,13 @@ name := "docker-testkit-munit"
 testFrameworks += new TestFramework("munit.Framework")
 fork in Test := true
 
+val munit   = "org.scalameta" %% "munit"               % "[0.2.0,)" % Provided // scala-steward:off
+val testkit = "com.whisk"     %% "docker-testkit-core" % "[0.9.9,)"  % Provided // scala-steward:off
+
+libraryDependencies += munit
+libraryDependencies += testkit
+
 libraryDependencies ++= Seq(
-  "org.scalameta" %% "munit"                           % "0.7.7",
-  "com.whisk"     %% "docker-testkit-core"             % "0.9.9",
   "com.whisk"     %% "docker-testkit-impl-spotify"     % "0.9.9"   % Test,
   "com.whisk"     %% "docker-testkit-impl-docker-java" % "0.9.9"   % Test,
   "com.whisk"     %% "docker-testkit-samples"          % "0.9.9"   % Test,
