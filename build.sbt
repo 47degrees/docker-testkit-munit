@@ -11,7 +11,7 @@ testFrameworks += new TestFramework("munit.Framework")
 fork in Test := true
 
 val munit   = "org.scalameta" %% "munit"               % "[0.2.0,)" % Provided // scala-steward:off
-val testkit = "com.whisk"     %% "docker-testkit-core" % "[0.9.9,)"  % Provided // scala-steward:off
+val testkit = "com.whisk"     %% "docker-testkit-core" % "[0.9.9,)" % Provided // scala-steward:off
 
 libraryDependencies += munit
 libraryDependencies += testkit
