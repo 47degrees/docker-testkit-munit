@@ -1,19 +1,15 @@
 ThisBuild / scalaVersion := "2.13.2"
 ThisBuild / organization := "com.47deg"
 
-addCommandAlias("ci-test", "scalafmtCheckAll; scalafmtSbtCheck; test")
-addCommandAlias("ci-docs", "github; project-docs/mdoc; headerCreateAll")
+addCommandAlias("ci-test", "scalafmtCheckAll; scalafmtSbtCheck; mdoc; test")
+addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
 
 lazy val testkit = project
   .in(file("."))
   .settings(moduleName := "docker-testkit-munit")
   .settings(testkitSettings: _*)
 
-lazy val `project-docs` = project
-  .in(file(".docs"))
-  .aggregate(testkit)
-  .settings(moduleName := "docker-testkit-munit-project-docs")
-  .settings(mdocIn := file(".docs"))
+lazy val `documentation` = project
+  .enablePlugins(MdocPlugin)
   .settings(mdocOut := file("."))
   .settings(skip in publish := true)
-  .enablePlugins(MdocPlugin)
