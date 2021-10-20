@@ -21,7 +21,7 @@ libraryDependencies ++= Seq(
   "com.whisk"     %% "docker-testkit-impl-docker-java" % testKitVersion % Test,
   "com.whisk"     %% "docker-testkit-samples"          % testKitVersion % Test,
   "ch.qos.logback" % "logback-classic"                 % "1.2.6"        % Test,
-  "org.postgresql" % "postgresql"                      % "42.2.24"      % Test
+  "org.postgresql" % "postgresql"                      % "42.3.0"      % Test
 )
 
 lazy val `documentation` = project
