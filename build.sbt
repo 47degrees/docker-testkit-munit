@@ -11,7 +11,7 @@ testFrameworks += new TestFramework("munit.Framework")
 fork in Test := true
 
 val munit          = "org.scalameta" %% "munit" % "[0.2.0,)" % Provided // scala-steward:off
-val testKitVersion = "0.9.9"
+val testKitVersion = "0.11.0"
 
 libraryDependencies += munit
 
