@@ -20,7 +20,7 @@ libraryDependencies ++= Seq(
   "com.whisk"     %% "docker-testkit-impl-spotify"     % testKitVersion % Test,
   "com.whisk"     %% "docker-testkit-impl-docker-java" % testKitVersion % Test,
   "com.whisk"     %% "docker-testkit-samples"          % testKitVersion % Test,
-  "ch.qos.logback" % "logback-classic"                 % "1.2.9"        % Test,
+  "ch.qos.logback" % "logback-classic"                 % "1.2.10"       % Test,
   "org.postgresql" % "postgresql"                      % "42.3.1"       % Test
 )
 
