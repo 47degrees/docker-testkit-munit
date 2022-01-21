@@ -21,6 +21,9 @@ import com.whisk.docker.impl.dockerjava._
 import com.whisk.docker.impl.spotify._
 import _root_.munit.FunSuite
 
+import scala.concurrent.duration._
+import scala.language.postfixOps
+
 abstract class DockerContainerLinkingSpec extends FunSuite with DockerTestKit {
 
   lazy val cmdExecutor = implicitly[DockerCommandExecutor]
@@ -37,6 +40,9 @@ abstract class DockerContainerLinkingSpec extends FunSuite with DockerTestKit {
   override def dockerContainers = pingService :: pongService :: super.dockerContainers
 
   test("A DockerContainer should be linked to the specified containers upon start") {
+
+    implicit val InspectTimeout = 3 seconds
+
     val ping     = cmdExecutor.inspectContainer(pingName)
     val pongPing = cmdExecutor.inspectContainer(s"$pongName/$pingAlias")
 
