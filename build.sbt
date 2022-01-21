@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "2.13.7"
+ThisBuild / scalaVersion := "2.13.8"
 ThisBuild / organization := "com.47deg"
 
 addCommandAlias("ci-test", "scalafmtCheckAll; scalafmtSbtCheck; mdoc; test")
@@ -20,7 +20,7 @@ libraryDependencies ++= Seq(
   "com.whisk"     %% "docker-testkit-impl-spotify"     % testKitVersion % Test,
   "com.whisk"     %% "docker-testkit-impl-docker-java" % testKitVersion % Test,
   "com.whisk"     %% "docker-testkit-samples"          % testKitVersion % Test,
-  "ch.qos.logback" % "logback-classic"                 % "1.2.7"        % Test,
+  "ch.qos.logback" % "logback-classic"                 % "1.2.10"       % Test,
   "org.postgresql" % "postgresql"                      % "42.3.1"       % Test
 )
 
