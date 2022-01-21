@@ -10,7 +10,7 @@ name := "docker-testkit-munit"
 testFrameworks += new TestFramework("munit.Framework")
 fork in Test := true
 
-val munit          = "org.scalameta" %% "munit" % "[0.2.0,)" % Provided // scala-steward:off
+val munit          = "org.scalameta" %% "munit" % "1.0.0-M1" % Provided // scala-steward:off
 val testKitVersion = "0.11.0-beta1"
 
 libraryDependencies += munit
