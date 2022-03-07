@@ -30,6 +30,9 @@ class DependencyGraphReadyCheckSpec extends FunSuite with DockerKitSpotify {
   override val StartContainersTimeout = 45 seconds
   override val StopContainersTimeout  = 45 seconds
 
+  override def munitTimeout: Duration =
+    StartContainersTimeout.plus(StopContainersTimeout).plus(PullImagesTimeout).plus(30.seconds)
+
   private lazy val log = LoggerFactory.getLogger(this.getClass)
 
   val zookeeperContainer =
