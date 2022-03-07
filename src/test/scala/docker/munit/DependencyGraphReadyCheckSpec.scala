@@ -28,7 +28,7 @@ import scala.language.postfixOps
 class DependencyGraphReadyCheckSpec extends FunSuite with DockerKitSpotify {
 
   override val StartContainersTimeout = 45 seconds
-  override val StopContainersTimeout = 45 seconds
+  override val StopContainersTimeout  = 45 seconds
 
   private lazy val log = LoggerFactory.getLogger(this.getClass)
 
