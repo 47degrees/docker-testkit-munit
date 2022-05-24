@@ -20,6 +20,9 @@ import com.whisk.docker._
 import com.whisk.docker.impl.dockerjava.DockerKitDockerJava
 import _root_.munit.FunSuite
 
+import scala.concurrent.duration._
+import scala.language.postfixOps
+
 class ElasticsearchServiceSpec
     extends FunSuite
     with DockerElasticsearchService
@@ -27,6 +30,8 @@ class ElasticsearchServiceSpec
     with DockerKitDockerJava {
 
   test("elasticsearch container should be ready") {
+    implicit val ContainerReadyTimeout = 3 seconds
+
     isContainerReady(elasticsearchContainer).map(assert(_))
     elasticsearchContainer.getPorts().map(m => assert(m.get(9300).nonEmpty))
     elasticsearchContainer.getIpAddresses().map(s => assert(s.nonEmpty))
