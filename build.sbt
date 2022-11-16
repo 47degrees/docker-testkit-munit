@@ -10,14 +10,13 @@ addCommandAlias("ci-publish", "github; ci-release")
 val testKitVersion = "0.9.9"
 
 lazy val `documentation` = project
+  .dependsOn(`docker-testkit-munit`)
   .enablePlugins(MdocPlugin)
   .settings(mdocOut := file("."))
   .settings(publish / skip := true)
 
 lazy val `docker-testkit-munit` = project
-  .in(file("."))
   .settings(
-    name := "docker-testkit-munit",
     testFrameworks += new TestFramework("munit.Framework"),
     Test / fork := true,
     libraryDependencies ++= Seq(
